@@ -38,4 +38,9 @@ describe "HomePages" do
 			page.should have_content('titre1')
 		end
 
+		it "liens clicables sur les posts" do
+			visit posts_path
+			page.should have_link('Show', :href => @post1.id)
+		end
+
 end

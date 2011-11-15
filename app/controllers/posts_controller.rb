@@ -16,5 +16,9 @@ class PostsController < ApplicationController
 		@post = Post.create(params[:post])
 		redirect_to posts_path
 	end
-
+	
+	def show
+		@post = Post.find(params[:id])
+		render
+	end
 end
