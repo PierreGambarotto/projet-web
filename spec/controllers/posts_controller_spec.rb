@@ -22,14 +22,14 @@ describe PostsController do
 
 	describe "GET show " do
 		before(:each) do
-      @posts = [stub_model(Post,:title => "1"),stub_model(Post,:title => "2")]
-      Post.stub(:all){ @posts }
+      @post = stub_model(Post,:title => "titre", :body => "corps")
+      Post.stub(:all){ @post }
     end
 
 		it "affiche un post" do
-			Post.should_receive(:find).with("1").and_return(@posts[1])
+			Post.should_receive(:find).with("1").and_return(@post)
 			get :show, :id => "1"
-			assigns(:post).should eq @posts[1]
+			assigns(:post).should eq @post
 		end
 		
 	end
@@ -61,5 +61,47 @@ describe PostsController do
     end
  
 	end
+
+	describe "DELETE post/:id" do
+		before(:each) do
+			@post = stub_model(Post, :title => "Titre 1", :body => "Corps 1")
+			@post.stub(:find) {@posts}
+			@post.stub(:destroy){ true }
+		end
+
+		it "supprime un post" do
+			Post.should_receive(:find).with(@post.id.to_s).and_return(@post)
+			@post.should_receive(:destroy)
+			delete :destroy, :id => @post.id
+			response.should redirect_to(posts_path)
+		end
+
+	end
+
+	
+
 	
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
