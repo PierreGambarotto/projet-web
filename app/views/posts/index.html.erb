@@ -6,6 +6,7 @@
     <th>Body</th>
 		<th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @posts.each do |post| %>
@@ -14,6 +15,7 @@
     <td><%= post.body %></td>
 		<td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post.id) %></td>
+    <td><%= link_to 'Delete', post_path(post.id), :method => :delete %></td>
   </tr>
 <% end %>
 </table>
