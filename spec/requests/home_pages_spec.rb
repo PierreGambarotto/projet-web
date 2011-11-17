@@ -40,7 +40,8 @@ describe "HomePages" do
 
 		it "liens clicables sur les posts" do
 			visit posts_path
-			page.should have_link('Show', :href => @post1.id)
+			page.should have_link('Show', :href => post_path(@post1.id))
+      page.should have_link('Edit', :href => edit_post_path(@post1.id))
 		end
 
 end

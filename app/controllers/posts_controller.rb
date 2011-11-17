@@ -21,4 +21,18 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		render
 	end
+
+  def edit
+    @post = Post.find(params[:id])
+    render
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(params[:post])
+      redirect_to posts_path, notice: 'Post was successfully updated.' # @post <=> post[@post.id]
+    else
+      render action: "edit"
+    end
+  end
 end

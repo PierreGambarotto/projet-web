@@ -1,17 +1,14 @@
 require 'spec_helper'
 
-describe "posts/new.html.erb" do
+describe "posts/edit.html.erb" do
   before(:each) do
-    # on positionne les variables que va recevoir la vue
-    assign(:post, stub_model(Post,
-      :title => "title 1",
-      :body => "body 1"
-    ).as_new_record)
+    @post = stub_model(Post, :title => "title 1", :body => "body 1")
+    assign(:post, @post)
   end
 
-  it "renders new post form" do
+  it "renders edit post form" do
     render
-    rendered.should have_selector("form[action='/posts']")
+    rendered.should have_selector("form[action='/posts/#{@post.id}']")
     rendered.should have_selector("input[id='post_title']")
     rendered.should have_selector("textarea[id='post_body']")
     rendered.should have_selector("input[type='submit']")

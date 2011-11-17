@@ -8,9 +8,9 @@ describe PostsController do
       Post.stub(:all){ @posts }
     end
     it "assigns a list of posts" do
-      Post.should_receive(:all).and_return(@posts)
+      Post.should_receive(:all).and_return(@posts) #specifie les methodes qui devront etre appelees lors du test
       get 'index'
-      assigns(:posts).should eq @posts
+      assigns(:posts).should eq @posts            #verifier que les variables ont la bonne valeur
       response.should be_success
     end
 
@@ -34,9 +34,9 @@ describe PostsController do
 		
 	end
 
-	describe "creation d\'un nouveau post" do
+	describe "POST /posts" do
 
-		it "creates a new post" do 
+    it "cree un nouveau post" do 
 			post :create, :post => {:title => "t1", :body => "b1"}
 			assigns(:post).should be_a(Post)
 		end
@@ -46,6 +46,20 @@ describe PostsController do
       response.should redirect_to(posts_path)
     end
 		
+	end
+
+  describe "PUT update" do
+    before(:each) do
+      @post = stub_model(Post,:title => "1")
+      Post.stub(:all){ @post }
+    end
+
+    it "edite" do
+      Post.should_receive(:find).with(@post.id.to_s).and_return(@post)
+      put :update, {:id => @post.id, :title => "new title"}
+      response.should redirect_to(posts_path)
+    end
+ 
 	end
 	
 end
