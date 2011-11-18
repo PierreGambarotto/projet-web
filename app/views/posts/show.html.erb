@@ -1,9 +1,13 @@
-<h1><%= @post.title %></h1>
-<br/>
-<br/>
 <p>
-<%= @post.body %>
-<%= link_to 'Edit', edit_post_path(@post.id) %>
+	<b>Title:</b>
+  <%= @post.title %>
+</p>
+<%= link_to 'Edit', edit_post_path(@post) %>
+<p>
+  <b>Body:</b>
+  <%= @post.body %>
+</p>
+<%= render 'comments/list' %>
 <%= link_to 'Back', posts_path %>
 </p>
 

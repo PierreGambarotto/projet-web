@@ -8,6 +8,8 @@ get '/posts/:id/edit' => 'posts#edit', :as => :edit_post
 put '/posts/:id' => 'posts#update'
 delete '/posts/:id' => 'posts#destroy'
 
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
