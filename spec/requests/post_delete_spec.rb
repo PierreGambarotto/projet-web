@@ -17,7 +17,7 @@ describe 'delete /post/:id' do
 		within("tr td", :text => @posts[2].title) do
 			click_link :Delete
 		end
-		page.should_not have_content(@post[2].body)
+		page.should_not have_content(@posts[2].body)
 	end
 
 end
