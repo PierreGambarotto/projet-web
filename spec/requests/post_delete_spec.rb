@@ -14,7 +14,7 @@ describe 'delete /post/:id' do
 
 	it "supprime le post 2, il ne reste plus que le post 1" do
 		visit posts_path
-		within ('tr', :text => @posts[2].title) do
+		within("tr td", :text => @posts[2].title) do
 			click_link :Delete
 		end
 		page.should_not have_content(@post[2].body)
