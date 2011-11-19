@@ -1,15 +1,10 @@
 <h3>Comments</h3>
-<table>
-  <tr>
-    <th>Author</th>
-    <th>Comment</th>
-  </tr>
-
 <% @post.comments.each do |comment| %>
 <fieldset>
 	<legend>
     <%= comment.author %>
 	</legend>
+	<p><%= @post.comments.inspect %></p>
    <p><%= comment.body %></p>
 </fieldset>
 <% end %>

@@ -2,21 +2,17 @@ require 'spec_helper'
 
 describe 'delete /post/:id' do
 
-	before(:each) do
+	before(:all) do
 		@post = Post.create(:title => "Sujet 1", :body => "Corps 1")
-	end
-	
-	it "affiche un lien pour supprimer un post" do
-		visit posts_path
-		page.should have_link('Delete' , :href => post_path(@post), :method => :delete)
+		
 	end
 
-	it "supprime le post de la page" do
+	it "affiche le bouton de suppression" do
 		visit posts_path
-		within("tr", :text => @post.title) do
-			click_link :Delete
-		end
-		page.should have_no_link('Delete' , :href => post_path(@post), :method => :delete)
+		page.should have_link('Delete' , :href => post_path(@post), :method => :delete)		
+		click_link :Delete
+		current_path.should == posts_path
+		page.should_not have_content(@post.body)
 	end
 
 end

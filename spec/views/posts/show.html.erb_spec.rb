@@ -2,8 +2,11 @@ require 'spec_helper'
 
 describe 'posts/show.html.erb' do
   before(:each) do
-    @post = stub_model(Post, :author => :T1, :body => :B1)
-    assign(:post, @post)
+    @post = stub_model(Post, :title => :T1, :body => :B1, :comments[0] => @comment)
+		@comments = [stub_model(Comment, :author => :toto, :body => 'Ca c\est du commentaire', :post_id => @post.id)]
+		@post.comments = @comments
+		assign(:post, @post)
+
   end
 
   it 'affiche un post' do
@@ -16,15 +19,10 @@ describe 'posts/show.html.erb' do
 	
 	describe 'affichage des commentaires' do
 		it 'liste les commentaires' do
-			@comments = [stub_model(Comment, :title => :TitreCommentaire1, :body => :Commentaire1),
-									stub_model(Comment, :title => :TitreCommentaire2, :body => :Commentaire2)]
-			assign(:comments, @comments)
-			render
-			@comments.each do |comment| 
-				rendered.should have_content(comment.author)
-				rendered.should have_content(comment.body)
-			end
 			
+			render
+			rendered.should have_content(@comments[0].author)
+			rendered.should have_content(@comments[0].body)			
 		end
 	end
 end
