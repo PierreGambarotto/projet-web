@@ -12,9 +12,11 @@ describe "post_show" do
 	end
 
 	it "affiche le contenu du post" do
-		get post_path(@post.id)
-		response.body.should include(@post.title)
-		response.body.should include(@post.body)
+		visit posts_path
+		click_link :Show
+		current_path.should == post_path(@post)
+		page.should have_content(@post.title)
+		page.should have_content(@post.body)
 	end
 
 end
