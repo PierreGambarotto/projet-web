@@ -11,8 +11,7 @@ describe 'post_edit' do
 	end
 
 	it "renvoi la page d edition de post qui contient un formulaire" do
-		visit posts_path
-		click_link('Edit')
+		click_link :Edit
 		page.should have_content('Edition d\'un nouveau post')
 		page.should have_selector('form')
 		page.should have_field('post_title')
