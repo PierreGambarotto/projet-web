@@ -4,10 +4,9 @@
 	<legend>
     <%= comment.author %>
 	</legend>
-	<p><%=# link_to 'Delete Comment', [comment.post, comment],
-         #      :confirm => 'Are you sure?',
-         #      :method => :delete 
-			%>
+	<p><%= link_to 'Delete Comment', "/posts/#{@post.id}/comments/#{comment.id}",
+               :confirm => 'Are you sure?',
+               :method => :delete%>
 	</p>
    <p><%= comment.body %></p>
 </fieldset>

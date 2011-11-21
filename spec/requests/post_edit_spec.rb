@@ -23,7 +23,7 @@ describe 'post_edit' do
 		fill_in('post_title', :with => 'titre1!!!')
 		fill_in('post_body', :with => 'contenu1!!!')
 		click_button('Update Post')
-		current_path.should == posts_path
+		current_path.should == post_path(@post)
 		page.should have_content('titre1!!!')
 		page.should have_content('contenu1!!!')
 	end

@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update_attributes(params[:post])
-      redirect_to posts_path, notice: 'Post was successfully updated.' # @post <=> post[@post.id]
+      redirect_to post_path(@post), notice: 'Post was successfully updated.' # @post <=> post[@post.id]
     else
       render action: "edit"
     end

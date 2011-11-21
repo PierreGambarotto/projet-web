@@ -6,7 +6,7 @@ describe 'Create comment' do
 		@post = Post.create(:title => "subject1", :body => "bla bla1");
 	end
 	
-	it 'affiche le formulaire de creation' do
+	it 'affiche le formulaire de creation et cree un commentaire' do
 		visit post_path(@post)
 		page.should have_selector('form')
 		page.should have_field('comment_author')

@@ -57,7 +57,7 @@ describe PostsController do
     it "edite" do
       Post.should_receive(:find).with(@post.id.to_s).and_return(@post)
       put :update, {:id => @post.id, :title => "new title"}
-      response.should redirect_to(posts_path)
+      response.should redirect_to(post_path(@post))
     end
  
 	end
