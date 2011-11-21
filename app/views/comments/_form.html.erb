@@ -1,0 +1,13 @@
+<%= form_tag "/posts/#{@post.id}/comments" %>
+
+  <div class="field">
+    <%= label_tag :author %><br />
+    <%= text_field_tag :comment_author %>
+  </div>
+  <div class="field">
+    <%= label_tag :comment %><br />
+    <%= text_area_tag :comment_body %>
+  </div>
+  <div class="actions">
+    <%= submit_tag value = "Comment" %>
+  </div>

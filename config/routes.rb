@@ -7,7 +7,7 @@ get '/posts/:id' => 'posts#show', :as => :post
 get '/posts/:id/edit' => 'posts#edit', :as => :edit_post
 put '/posts/:id' => 'posts#update'
 delete '/posts/:id' => 'posts#destroy'
-
+post '/posts/:id/comments' => 'comments#create'
 
 
   # The priority is based upon order of creation:

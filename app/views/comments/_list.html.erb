@@ -4,7 +4,11 @@
 	<legend>
     <%= comment.author %>
 	</legend>
-	<p><%= @post.comments.inspect %></p>
+	<p><%=# link_to 'Delete Comment', [comment.post, comment],
+         #      :confirm => 'Are you sure?',
+         #      :method => :delete 
+			%>
+	</p>
    <p><%= comment.body %></p>
 </fieldset>
 <% end %>

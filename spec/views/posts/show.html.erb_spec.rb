@@ -17,7 +17,7 @@ describe 'posts/show.html.erb' do
     rendered.should have_link('Edit', :href => edit_post_path(@post.id))
   end
 	
-	describe 'affichage des commentaires' do
+	describe 'affiche les commentaires' do
 		it 'liste les commentaires' do
 			
 			render
@@ -25,4 +25,12 @@ describe 'posts/show.html.erb' do
 			rendered.should have_content(@comments[0].body)			
 		end
 	end
+
+	it "affiche le formulaire de nouveau commentaire" do
+    render
+    rendered.should have_selector("form[action='/posts/#{@post.id}/comments']")
+    rendered.should have_selector("input[id='comment_author']")
+    rendered.should have_selector("textarea[id='comment_body']")
+    rendered.should have_selector("input[value='Comment']")
+  end
 end

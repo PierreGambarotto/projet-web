@@ -65,7 +65,7 @@ describe PostsController do
 	describe "DELETE post/:id" do
 		before(:each) do
 			@post = stub_model(Post, :title => "Titre 1", :body => "Corps 1")
-			@post.stub(:find) {@posts}
+			@post.stub(:find) {@post}
 			@post.stub(:destroy){ true }
 		end
 
