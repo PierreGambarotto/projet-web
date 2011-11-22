@@ -13,10 +13,13 @@ describe "post_show" do
 
 	it "affiche le contenu du post" do
 		visit posts_path
-		click_link :Show
+		within("tr", :text => @post.body) do
+			click_on :Show
+		end
 		current_path.should == post_path(@post)
 		page.should have_content(@post.title)
 		page.should have_content(@post.body)
 	end
 
 end
+
