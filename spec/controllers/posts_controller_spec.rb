@@ -51,13 +51,16 @@ describe PostsController do
   describe "PUT update" do
     before(:each) do
       @post = stub_model(Post,:title => "1")
-      Post.stub(:all){ @post }
+			@new_post = {"title" => "New title", "body" => "New body"}
+      Post.stub(:find){ @post }
+			@post.stub(:update_attributes) { true }
     end
 
     it "edite" do
       Post.should_receive(:find).with(@post.id.to_s).and_return(@post)
-      put :update, {:id => @post.id, :title => "new title"}
-      response.should redirect_to(post_path(@post))
+			@post.should_receive(:update_attributes).with(@new_post)
+      put :update, {:id => @post.id, :post => @new_post}
+      response.should redirect_to post_path(@post)
     end
  
 	end
