@@ -10,7 +10,7 @@ describe 'post_create' do
 	it "renvoi la page de creation de post qui contient un formulaire" do
 		visit posts_path
 		click_link('New Post')
-		page.should have_content('Creation d\'un nouveau post')
+		page.should have_content('Create a new post')
 		page.should have_selector('form')
 		page.should have_field('post_title')
 		page.should have_field('post_body')

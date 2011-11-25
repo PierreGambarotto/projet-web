@@ -12,7 +12,7 @@ describe 'post_edit' do
 
 	it "renvoi la page d edition de post qui contient un formulaire" do
 		visit edit_post_path(@post)
-		page.should have_content("Edition d\'un nouveau post")
+		page.should have_content("Edit post")
 		page.should have_selector('form')
 		page.should have_field('post_title')
 		page.should have_field('post_body')

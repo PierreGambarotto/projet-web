@@ -10,16 +10,21 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+		<div class="sep"></div>
+		<div class="form_row">
+				<div class="field">
+				<%= f.label :title %>
+				<%= f.text_field :title %>
+			</div>
+		</div>
+		<div class="sep"></div>
+		<div class="form_row">
+			<div class="field">
+				<%= f.label :body %><br />
+				<%= f.text_area :body %>
+			</div>
+		</div>
+			<div class="button">
+				<%= f.submit %>
+			</div>
 <% end %>

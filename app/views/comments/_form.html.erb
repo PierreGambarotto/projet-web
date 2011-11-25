@@ -1,13 +1,19 @@
 <%= form_tag "/posts/#{@post.id}/comments" %>
-
-  <div class="field">
-    <%= label_tag :author %><br />
-    <%= text_field_tag :comment_author %>
-  </div>
-  <div class="field">
-    <%= label_tag :comment %><br />
-    <%= text_area_tag :comment_body %>
-  </div>
-  <div class="actions">
+	<h2 class="form_title">Comment this post</h2>
+	<div class="sep"></div>
+	<div class="form_row">
+		<div class="field">
+		  <%= label_tag :author %>
+		  <%= text_field_tag :comment_author %>
+		</div>
+	</div>
+	<div class="sep"></div>
+	<div class="form_row">
+		<div class="field">
+		  <%= label_tag :comment %><br />
+		  <%= text_area_tag :comment_body %>
+		</div>
+	</div>
+  <div class="button">
     <%= submit_tag value = "Comment" %>
   </div>

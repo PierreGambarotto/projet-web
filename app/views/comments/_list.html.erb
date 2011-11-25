@@ -1,14 +1,16 @@
-<h3>Comments</h3>
+<h3 class="title_blue">Comments</h3>
 <% @post.comments.each do |comment| %>
-<fieldset>
-	<legend>
-    <%= comment.author %>
-	</legend>
-	<p><%= link_to 'Delete Comment', "/posts/#{@post.id}/comments/#{comment.id}",
-               :confirm => 'Are you sure?',
-               :method => :delete%>
-	</p>
-   <p><%= comment.body %></p>
-</fieldset>
+<div class="anx">	
+	<div class="box_blue_no_img">
+		<div class="box_in">
+			<div class="c_blue"></div>
+			<h3><%= comment.author %></h3>
+			<p><%= link_to 'Delete Comment', "/posts/#{@post.id}/comments/#{comment.id}",
+		             :confirm => 'Are you sure?',
+		             :method => :delete%>
+			</p>
+			<p class="p_spacer"><%= comment.body %></p>
+		</div>
+	</div>
+</div>
 <% end %>
-

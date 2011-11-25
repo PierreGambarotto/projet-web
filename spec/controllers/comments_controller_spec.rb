@@ -4,10 +4,11 @@ describe CommentsController do
 		pending "Tous les tests controleur"
 #		before(:each) do
 #			@post = stub_model(Post, :title => "Titre 1", :body => "Corps 1")
+#			@comments = [stub_model(Comment, :author => "Sylvain", "body" => "Com", :post_id => @post.id)]
 #			@post.stub(:find) {@post}
-#			@comment = stub_model(Comment, :author => "Sylvain", "body" => "Com", :post_id => @post.id)
+#			@post.stub(:comments) { @comments }
+
 #			comments = double("comments")
-#			@post.stub(:comments) { comments }
 #			comments.stub(:create) {true}
 #			comments.stub(:find) { @comment }
 #			comments.stub(:destroy) {true}

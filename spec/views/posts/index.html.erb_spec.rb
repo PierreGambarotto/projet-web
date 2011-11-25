@@ -3,8 +3,8 @@ require 'spec_helper'
 describe "posts/index.html.erb" do
   it "displays all the posts" do
 		@posts = [
-	           stub_model(Post, :title => "sujet 1"),
-  	         stub_model(Post, :title => "sujet 2")]
+	           stub_model(Post, :title => "sujet 1", :body => "corps1"),
+  	         stub_model(Post, :title => "sujet 2", :body => "corps2")]
     assign(:posts, @posts)
 
     render

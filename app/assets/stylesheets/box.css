@@ -1,0 +1,445 @@
+/************************************************
+
+	* BOITES EXTENSIBLE, Propiétés génériques
+		- Top box 
+		- Middle box
+		- Bottom box
+	
+*************************************************/
+
+.box {
+	width:auto;
+	padding:0;
+	margin-bottom:20px;
+	_margin-bottom:7px;
+	zoom :1;
+}
+
+/*  Top box */
+.box .top_left{
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-color:transparent;
+	width: auto; 
+}
+
+.box .top_middle{
+	background-repeat: repeat-x;
+	background-color:#333;
+}
+
+.box .top_right{
+	background-position: 100% 0%;
+	background-repeat: no-repeat; 
+	text-align: left;
+}
+
+
+/*  Middle box */
+
+.box .middle_left{
+	background-position: 0% 0%;
+	background-repeat: repeat-y;
+	width: auto;
+}
+.box .middle_middle{}
+.box .middle_right{
+	background-position: 100% 0%;
+	background-repeat: repeat-y;
+	background-color:#fff;	
+}
+
+/*  Bottom box */
+
+.box .bottom_left{
+	background-position: 0% 0%;
+	background-repeat: no-repeat;
+	width: auto;
+}
+.box .bottom_middle{
+	background-position: 0% 0%;
+	background-repeat: repeat-x;
+}
+.box .bottom_right{
+	background-position: 100% 0%;
+	background-repeat: no-repeat;
+}
+
+/*****************************************************************************
+
+	BOITES EXTENSIBLE, Propiétés spécifiques 
+	!!! un sous dossier par boites pour chaque correspondance (/blue, /orange...)
+		
+	/**** Propriétés des boites :
+	
+		- ".top_left",
+		  ".middle_left",
+		  ".bottom_left"  >>		padding-left = largeur de la bordure
+		- ".top_right"    >>		padding-top = hauteur de la bordure
+		- ".bottom_right" >>		height = hauteur de la bordure
+		
+	/**** Liste des boites :
+	
+		- boite bleue 
+		- boite orange
+		- boite ombragée
+		
+	/**** Gestionnaires d'espacement
+		
+	
+******************************************************************************/
+
+/* boite bleue */
+
+.box_blue {
+}
+
+	/* Top box */
+	.box_blue .top_left{
+		background-image: url(../img/boxes/blue/top_left.png);
+		padding-left:7px;
+	}
+	
+	.box_blue .top_middle{
+		background-image: url(../img/boxes/blue/top_middle.png);
+		
+	}
+	
+	.box_blue .top_right{
+		background-image: url(../img/boxes/blue/top_right.png);
+		font:bold 100% Arial, Helvetica, sans-serif;
+		line-height:2.05em;
+		color:#fff;
+	}
+	
+	
+	/*  Middle box */
+	.box_blue .middle_left{
+		background-image: url(../img/boxes/blue/middle_left.png);
+		padding-left: 1px;
+	}
+	.box_blue .middle_right{
+		background-image: url(../img/boxes/blue/middle_right.png);
+	}
+	
+	/* Bottom box */
+	
+	.box_blue .bottom_left{
+		background-image: url(../img/boxes/blue/bottom_left.png); 
+		padding-left: 1px;
+		
+	}
+	.box_blue .bottom_middle{
+		background-image: url(../img/boxes/blue/bottom_middle.png);
+		
+	}
+	.box_blue .bottom_right{
+		background-image: url(../img/boxes/blue/bottom_right.png);
+		height: 1px;
+	}
+	
+/* boite orange */
+
+.box_orange {
+}
+
+	/* Top box */
+	.box_orange .top_left{
+		background-image: url(../img/boxes/orange/top_left.png);
+		padding-left:7px;
+	}
+	
+	.box_orange .top_middle{
+		background-image: url(../img/boxes/orange/top_middle.png);
+	}
+	
+	.box_orange .top_right{
+		background-image: url(../img/boxes/orange/top_right.png);
+		font:bold 100% Arial, Helvetica, sans-serif;
+		line-height:2.05em;
+		color:#fff;
+	}
+	
+	
+	/*  Middle box */
+	.box_orange .middle_left{
+		background-image: url(../img/boxes/orange/middle_left.png);
+		padding-left: 1px;
+	}
+	.box_orange .middle_right{
+		background-image: url(../img/boxes/orange/middle_right.png);
+	}
+	
+	/* Bottom box */
+	
+	.box_orange .bottom_left{
+		background-image: url(../img/boxes/orange/bottom_left.png); 
+		padding-left: 1px;
+	}
+	.box_orange .bottom_middle{
+		background-image: url(../img/boxes/orange/bottom_middle.png);
+	}
+	.box_orange .bottom_right{
+		background-image: url(../img/boxes/orange/bottom_right.png);
+		height: 1px;
+	}	
+
+/* boite bleue ombrée */
+
+.box_blue_shade { margin: 0 0 20px; }
+
+	/* Top box */
+	.box_blue_shade .top
+	{
+		background: #3685e4 url(../img/boxes/blue_shade/top_left.png) 0 0 no-repeat;
+		color: #fff;
+		font-size: 12px;
+		font-weight: bold;
+		height: 21px;
+		line-height: 21px;
+		padding: 0 10px;
+	}
+	
+	/* Middle box */
+	.box_blue_shade .middle
+	{
+		background: #fff url(../img/boxes/blue_shade/shade.png) 0 0 repeat-x;
+		border: solid #005bbb;
+		border-width: 0 1px 1px;
+		padding: 15px 15px 15px 10px;
+	}
+	
+/* boite orange ombrée */
+.box_orange_shade { margin: 0 0 20px; }
+
+	/* Top box */
+	.box_orange_shade .top
+	{
+		background: #fe912a url(../img/boxes/orange_shade/top_left.png) 0 0 no-repeat;
+		color: #fff;
+		font-size: 12px;
+		font-weight: bold;
+		height: 21px;
+		line-height: 21px;
+		padding: 0 10px;
+	}
+	
+	/* Middle box */
+	.box_orange_shade .middle
+	{
+		background: #fff url(../img/boxes/orange_shade/shade.png) 0 0 repeat-x;
+		border: solid #ff8900;
+		border-width: 0 1px 1px;
+		padding: 15px 15px 15px 10px;
+	}
+
+/* boite grise */
+.box_gray
+{
+	background: #eef1f6;
+	border: 1px solid #bac6d0;
+	margin: 0 0 20px;
+	position: relative;
+	zoom: 1;
+}
+
+	.box_gray .top
+	{
+		background: #fff url(../img/boxes/gray/top_left.png) 0 0 no-repeat;
+		height: 5px;
+		font-size: 1px;
+		left: -1px;
+		position: absolute;
+		top: -1px;
+		width: 7px;
+	}
+	
+	.box_gray .box_gray_inner
+	{
+		border: 1px solid;
+		border-color: #e4e9f0 #f7f8fb #eef1f6 #e4e9f0;
+		padding: 8px 1px 4px;
+	}
+	
+	.box_gray .middle { padding: 10px 9px 10px 8px }
+
+
+/* boite ombragée */
+
+.box_shade {
+}
+
+	/* Top box */
+	.box_shade .top_left{
+		background-image: url(../img/boxes/shade/top_left.png);
+		padding-left:7px;
+	}
+	
+	.box_shade .top_middle{
+		background-image: url(../img/boxes/shade/top_middle.png);
+	}
+	
+	.box_shade .top_right{
+		background-image:url(../img/boxes/shade/top_right.png);
+		font:bold 11px Arial, Helvetica, sans-serif;
+		padding-top:23px;
+		padding:22px;
+		color:#fff;
+	}
+	
+	/*  Middle box */
+	.box_shade .middle_left{
+		background-image: url(../img/boxes/shade/middle_left.png);
+		padding-left: 1px;
+	}
+	.box_shade .middle_right{
+		background-image: url(../img/boxes/shade/middle_right.png);
+		background-color: transparent;
+	}
+	
+	/* Bottom box */
+	
+	.box_shade .bottom_left{
+		background-image: url(../img/boxes/shade/bottom_left.png); 
+		padding-left: 7px;
+	}
+	.box_blue_no_img .box_shade .bottom_left{
+		background-image: url(../img/boxes/shade/bottom_left_blue.png);
+	}
+	
+	.box_shade .bottom_middle{
+		background-image: url(../img/boxes/shade/bottom_middle.png);
+	}
+	.box_shade .bottom_right{
+		background-image: url(../img/boxes/shade/bottom_right.png);
+		height: 7px;
+	}
+	.box_blue_no_img .box_shade .bottom_right{
+		background-image: url(../img/boxes/shade/bottom_right_blue.png);
+	}
+
+.box_sky {
+}
+
+	/* Top box */
+	.box_sky .top_left{
+		background-image: url(../img/boxes/sky/top_left.png);
+		padding-left:7px;
+	}
+
+	.box_sky .top2_left{
+		background-image: url(../img/boxes/sky/top_left2.png) !important;
+	}
+	
+	.box_sky .top_middle{
+		background-image: url(../img/boxes/sky/top_middle.png);
+	}
+	
+	.box_sky .top_right{
+		background-image: url(../img/boxes/sky/top_right.png);
+		font-size: 1px;
+		height:5px;
+	}
+	
+	
+	/*  Middle box */
+	.box_sky .middle_left{
+		background-image: url(../img/boxes/sky/middle_left.png);
+		padding-left: 2px;
+	}
+	.box_sky .middle_right{
+		background-image: url(../img/boxes/sky/middle_right.png);
+		background-color:#eef1f6;
+	}
+	
+	/* Bottom box */
+	
+	.box_sky .bottom_left{
+		background-image: url(../img/boxes/sky/bottom_left.png); 
+		padding-left: 2px;
+	}
+	.box_sky .bottom_middle{
+		background-image: url(../img/boxes/sky/bottom_middle.png);
+	}
+	.box_sky .bottom_right{
+		background-image: url(../img/boxes/sky/bottom_right.png);
+		height: 1px;
+	}
+
+.box_blue_no_img {
+	border:1px solid #c9cdd1;
+	background-color:#f8f9fb;
+	padding:1px;
+	position:relative;
+}
+
+	/* Gestionnaires d'espacement et de comportement */
+	
+	.misc_pad {
+		padding:10px 9px 7px;
+	}
+	
+	.other_projects .thr_part .misc_pad { padding-left: 24px; }
+	
+	.box_shade .middle_right img {
+		display:block;
+	}
+	.misc_cartouche {
+		padding:5px 2px 5px 1px;
+	}
+
+	.light_marge {
+		padding:12px 14px;
+	}
+	.ui_right {
+		position:relative;
+		padding-left:16px;
+	}	
+	
+/* new box */
+
+.box_light {
+	background:#fff url(../img/layout/middle_parse.gif) repeat-y scroll 50% 0;
+	border-bottom:1px solid #dfe1e3;
+}
+
+.box_light2 {
+	background:#fff url(../img/layout/thr_parse.gif) repeat-y scroll 50% 0;
+	border-bottom:1px solid #dfe1e3;
+}
+
+/* définition des largeur des box dans les boite de gauches */
+
+.box_lf {
+	width:14.5em;
+}
+
+.anx {
+	margin:2em 0;
+	font-size:.85em;
+	position:relative;
+	zoom: 1;
+}
+.anx h3 {
+	font-weight:bold;
+	font-size: 1.1em;
+	padding-bottom:1em;
+}
+
+.c_blue {
+    background: url("../img/layout/corner_blue.gif") no-repeat scroll 0 0 transparent;
+    font-size: 1px;
+    height: 9px;
+    left: -3px;
+    position: absolute;
+    top: -3px;
+    width: 10px;
+}
+
+.box_in {
+    background-color: #EEF1F6;
+    border: 1px solid #F4F6F9;
+    padding: 12px;
+    position: relative;
+}
+

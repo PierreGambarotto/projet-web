@@ -1,11 +1,13 @@
-<h1>Title: <%= @post.title %></h1>
-<%= link_to 'Edit', edit_post_path(@post) %>
-<p>
-  <b>Body:</b>
-  <%= @post.body %>
-</p>
-<%= render 'comments/list' %>
-<%= render 'comments/form' %>
-<%= link_to 'Back', posts_path %>
-</p>
-
+	<div class="box box_orange_shade">
+		<h2 class="top"><%= @post.title %></h2>
+		<div class="middle clear_fix">
+			<p><%= link_to 'Edit', edit_post_path(@post)%>
+			<p class="p_spacer"><%= @post.body %></p>
+		</div>
+	</div>
+	<div class="comments">
+		<%= render 'comments/list' %>
+		<div class="form_container">
+			<%= render 'comments/form' %>
+		</div>
+	</div>

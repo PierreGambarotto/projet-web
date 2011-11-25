@@ -12,6 +12,6 @@ describe "posts/edit.html.erb" do
     rendered.should have_selector("input[id='post_title']")
     rendered.should have_selector("textarea[id='post_body']")
     rendered.should have_selector("input[type='submit']")
-    rendered.should have_link('Back', :href => posts_path)
+    rendered.should have_link('Back', :href => post_path(@post))
   end
 end

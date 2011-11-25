@@ -1,0 +1,132 @@
+/* Contenu du header */
+.header {
+		border: 2px solid black;
+    height: 130px;
+    padding: 3px 0 0 20px;
+    position: relative;
+}
+.header_right {
+    background: url("../img/layout/bg_logo_ig.png") no-repeat scroll 0 0 transparent;
+    float: right;
+    height: 86px;
+    overflow: hidden;
+    padding: 11px 23px 11px 0;
+    text-align: right;
+    width: 395px;
+}
+
+/* Contenu des pages */
+.content_duality { padding: 30px 0 22px ; }
+
+/* Partie gauche du contenu */
+.columns_left_middle
+{
+	float: left;
+	padding: 0 20px 0 20px;
+	width: 735px;
+}
+
+/* Partie droite du contenu */
+.columns_right
+{
+	float: right;
+	width: 250px;
+}
+
+/* Commentaires des posts */
+.comments {
+    float: left;
+    padding: 35px 0 0 35px;
+    width: 545px;
+}
+
+/* Titres bleus */
+
+.title_blue {
+		line-height: 1;
+    margin: -2px 0 0;
+    padding: 0 75px 10px 0;
+		color: #005BBB;
+    display: block;
+    font-size: 1.6em;
+    font-weight: normal;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+}
+
+.cartouche {
+    overflow: hidden;
+    padding: 2px 7px 5px 10px;
+    text-indent: 0;
+    width: 163px;
+    background: url("../img/layout/bg_tt_cartouche.png") no-repeat scroll 0 bottom transparent;
+    color: #000000;
+    font-weight: bold;
+    overflow: hidden;
+    padding: 2px 0 5px;
+    text-indent: 10px;
+    width: 100%;
+}
+
+/* Formulaires */
+
+form {
+    padding: 15px 15px 15px 11px;
+}
+
+.clear_fix {
+    display: block;
+}
+
+.clear_fix {
+    display: inline-block;
+}
+
+.form_container {
+    background: none repeat scroll 0 0 #ECEFF5;
+    width: 100%;
+}
+
+.form_title {
+    background: url("../img/layout/sitemap_title_bg.gif") no-repeat scroll 0 0 #FFFFFF;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 0 0 5px;
+}
+
+form .form_row {
+    clear: both;
+    overflow: hidden;
+    padding: 0 0 0 8px;
+    width: 100%;
+}
+
+form .sep {
+    clear: both;
+    height: 22px;
+}
+
+form input {
+    border: 1px solid #999999;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    width: 360px;
+		margin: 0 0 0 10px;
+}
+
+form textarea {
+		width: 95%;
+}
+
+form .button {
+		clear: both;
+		padding: 0 0 10px 0;
+    margin: 5px 0 0 5px;
+ }
+
+.button input {
+    width: 83px;
+}
+

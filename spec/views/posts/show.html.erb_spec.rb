@@ -11,9 +11,8 @@ describe 'posts/show.html.erb' do
 
   it 'affiche un post' do
     render
-    rendered.should have_selector("h1", :text => @post.title)
+    rendered.should have_selector("h2", :text => @post.title)
     rendered.should have_content(@post.body)
-    rendered.should have_link('Back', :href => posts_path)
     rendered.should have_link('Edit', :href => edit_post_path(@post.id))
   end
 	

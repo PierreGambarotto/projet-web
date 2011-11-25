@@ -1,25 +1,21 @@
-<h1>Listing posts</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-		<th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1 class="title_blue">Listing posts</h1>
 
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.body %></td>
-		<td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post.id) %></td>
-		<td><%= link_to 'Delete', post_path(post.id), :method => :delete %></td>
-  </tr>
+<div class="columns_left_middle">
+	<div class="box box_blue_shade">
+		<h2 class="top"><%= post.title %></h2>
+		<div class="middle clear_fix">
+			<p><%= link_to 'Edit', edit_post_path(post.id) %> <%= link_to 'Delete', post_path(post.id), :method => :delete %></p>
+			<p class="p_spacer">
+	<% if post.body.length < 400 %>
+			<%= post.body %>
+	<%else%>
+			<%= post.body[0..400]+" ..." %>
+	<%end%>
+			</p>
+			<p><%= link_to 'Show', post_path(post.id) %></p>
+		</div>
+	</div>
+</div>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Post', new_post_path %>
