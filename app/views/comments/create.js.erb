@@ -1,0 +1,4 @@
+$("a[href='<%= new_comment_path(@post.id) %>']").fadeIn();
+$("a[href='<%= new_comment_path(@post.id) %>']").before("<div class='anx'> <div class='box_blue_no_img'> 		<div class='box_in'> 			<div class='c_blue'></div> 			<h3><%= escape_javascript(@comment.author) %></h3> 			<p><%= escape_javascript(link_to 'Delete Comment', "/posts/#{@post.id}/comments/#{@comment.id}", 		             :confirm => 'Are you sure?', 		             :method => :delete)%> 			</p> 			<p class='p_spacer'><%= escape_javascript(@comment.body) %></p> 		</div> 	</div> </div>");
+
+$("form").remove();

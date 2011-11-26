@@ -7,7 +7,6 @@
 	</div>
 	<div class="comments">
 		<%= render 'comments/list' %>
-		<div class="form_container">
-			<%= render 'comments/form' %>
-		</div>
+		<%= link_to 'Add a comment', new_comment_path(@post.id), :remote => true%>
+		
 	</div>
