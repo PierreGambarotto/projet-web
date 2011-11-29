@@ -26,10 +26,7 @@ describe 'posts/show.html.erb' do
 
 		it "affiche le formulaire de nouveau commentaire" do
 		  render
-		  rendered.should have_selector("form[action='/posts/#{@post.id}/comments']")
-		  rendered.should have_selector("input[id='comment_author']")
-		  rendered.should have_selector("textarea[id='comment_body']")
-		  rendered.should have_selector("input[value='Comment']")
+		  rendered.should have_link('Add a comment', :href => "/posts/#{@post.id}/comments/new")
 		end
 		
 		it "affiche le bouton de suppression d'un commentaire" do

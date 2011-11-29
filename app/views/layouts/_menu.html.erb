@@ -9,4 +9,22 @@
 			</div>
 		</div>
 	</div>
+	<div class="box box_gray">
+		<div class="top"></div>
+		<div class="box_gray_inner">
+			<h2 class="cartouche">Login</h2>
+			<div class="middle clear_fix">
+				<%= form_tag "/users" %>
+				<div class="login_field">
+					<%= label_tag :login %>
+				 	<%= text_field_tag :user_login %>
+				</div>
+				<div class="login_field">
+					<%= label_tag :password %>
+					<%= password_field_tag :user_password %>
+				</div>
+				<p><%= link_to 'Create user', '/users' %></p>
+			</div>
+		</div>
+	</div>
 </div>

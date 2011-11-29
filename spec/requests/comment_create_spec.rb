@@ -8,6 +8,7 @@ describe 'Create comment' do
 	
 	it 'affiche le formulaire de creation et cree un commentaire' do
 		visit post_path(@post)
+		click_link('Add a comment')
 		page.should have_selector('form')
 		page.should have_field('comment_author')
 		page.should have_field('comment_body')
