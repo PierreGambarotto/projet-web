@@ -5,10 +5,16 @@
 		<div class="box_in">
 			<div class="c_blue"></div>
 			<h3><%= comment.author %></h3>
-			<p><%= link_to 'Delete Comment', "/posts/#{@post.id}/comments/#{comment.id}",
+<% if current_user %>
+			<div class="is_admin">
+<%else%>
+			<div class="is_not_admin">
+<%end%>
+				<p><%= link_to 'Delete Comment', "/posts/#{@post.id}/comments/#{comment.id}",
 		             :confirm => 'Are you sure?',
 		             :method => :delete%>
-			</p>
+				</p>
+			</div>
 			<p class="p_spacer"><%= comment.body %></p>
 		</div>
 	</div>

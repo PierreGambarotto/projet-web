@@ -6,6 +6,7 @@
 	<%= stylesheet_link_tag "styles"%>
 	<%= stylesheet_link_tag "box"%>
 	<%= stylesheet_link_tag "global"%>
+	<%= stylesheet_link_tag "user_sessions"%>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -19,7 +20,9 @@
 		</div>
 		<%end%>
 		<div class="columns_left_middle"><%= yield %></div>
-		<%=render "layouts/menu" %>
+		<div class="columns_right">
+			<%=render "layouts/menu" %>
+		</div>
 	</div>
 </div>
 </body>

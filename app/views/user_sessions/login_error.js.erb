@@ -1,0 +1,4 @@
+$("div[class='box box_gray']:last").remove();
+$("a[href='<%=login_path%>']").fadeIn();
+$('.content_duality').prepend("<% if flash[:notice] %><div class='flash'><%= escape_javascript(flash[:notice]) %></div><%end%>");
+<%flash[:notice]=nil%>

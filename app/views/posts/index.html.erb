@@ -5,7 +5,13 @@
 	<div class="box box_blue_shade">
 		<h2 class="top"><%= post.title %></h2>
 		<div class="middle clear_fix">
-			<p><%= link_to 'Edit', edit_post_path(post.id) %> <%= link_to 'Delete', post_path(post.id), :method => :delete %></p>
+<% if current_user %>
+			<div class="is_admin">
+<%else%>
+			<div class="is_not_admin">
+<%end%>
+				<p><%= link_to 'Edit', edit_post_path(post.id) %> <%= link_to 'Delete', post_path(post.id), :method => :delete %></p>
+			</div>
 			<p class="p_spacer">
 	<% if post.body.length < 400 %>
 			<%= post.body %>

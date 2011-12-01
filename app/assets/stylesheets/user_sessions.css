@@ -1,0 +1,7 @@
+.is_not_admin {
+display: none;
+}
+
+.is_admin {
+display: block;
+}

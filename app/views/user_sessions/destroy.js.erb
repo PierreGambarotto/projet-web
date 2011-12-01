@@ -1,0 +1,8 @@
+$("a[href='<%=logout_path%>']").html("<a data-remote='true' href='/login' >Log in</a>");
+<%flash[:notice]=nil%>
+$('.is_admin').each(function() {
+    var $div = $(this);
+    $div.attr("class", "is_not_admin");
+	}
+);
+

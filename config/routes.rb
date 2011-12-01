@@ -1,5 +1,7 @@
 Blog::Application.routes.draw do
 
+root :to => 'posts#index'
+
 get '/posts' => 'posts#index', :as => :posts
 post '/posts' => 'posts#create'
 get '/posts/new' => 'posts#new', :as => :new_post

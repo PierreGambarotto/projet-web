@@ -37,4 +37,9 @@ end
       redirect_to(session[:return_to])
       session[:return_to] = nil
     end
+		
+		def redirect_to_root(notice)
+			flash[:notice] = notice
+			redirect_to '/'
+		end
 

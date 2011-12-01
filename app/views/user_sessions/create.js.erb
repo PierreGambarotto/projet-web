@@ -1,0 +1,9 @@
+$("a[href='<%=login_path%>']").fadeIn();
+$("a[href='<%=login_path%>']").html("<a data-remote='true' href='/logout' >Log out</a>");
+$("div[class='box box_gray']:last").remove();
+$('.content_duality').prepend("<% if flash[:notice] %><div class='flash'><%= escape_javascript(flash[:notice]) %></div><%end%>");
+<%flash[:notice]=nil%>
+$('.is_not_admin').each(function() {
+    $(this).attr("class", "is_admin");
+	}
+);
