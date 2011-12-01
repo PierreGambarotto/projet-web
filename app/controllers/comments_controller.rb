@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+	before_filter :require_user, :only => :destroy
 	def new
 		@post = Post.find(params[:id])
 		respond_to do |format|

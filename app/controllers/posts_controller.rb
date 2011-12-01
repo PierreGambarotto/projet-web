@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+	before_filter :require_user, :except => [:index, :show]
+
 	def index
 		@posts = Post.all
 		respond_to do |format|

@@ -13,6 +13,11 @@
 <div class="wrapper">
 	<%=render "layouts/header" %>
 	<div class="content_duality clear_fix">
+		<% if flash[:notice] %>
+		<div class="flash">
+			<%= flash[:notice] %>
+		</div>
+		<%end%>
 		<div class="columns_left_middle"><%= yield %></div>
 		<%=render "layouts/menu" %>
 	</div>

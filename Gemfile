@@ -7,6 +7,7 @@ gem 'rails', '3.1.1'
 
 gem 'sqlite3'
 gem 'therubyracer'
+gem 'authlogic'
 
 group :test, :development do
   gem 'rspec-rails'

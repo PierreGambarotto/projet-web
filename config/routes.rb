@@ -10,6 +10,10 @@ delete '/posts/:id' => 'posts#destroy'
 post '/posts/:post_id/comments' => 'comments#create'
 delete '/posts/:post_id/comments/:id' => 'comments#destroy'
 get '/posts/:id/comments/new' => 'comments#new', :as => :new_comment
+resources :user_sessions
+
+match 'login' => "user_sessions#new",      :as => :login
+match 'logout' => "user_sessions#destroy", :as => :logout
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
