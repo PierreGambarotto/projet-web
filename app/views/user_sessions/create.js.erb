@@ -1,5 +1,7 @@
 $("a[href='<%=login_path%>']").fadeIn();
-$("a[href='<%=login_path%>']").html("<a data-remote='true' href='/logout' >Log out</a>");
+$("a[href='<%=login_path%>']").before("<div class='account'><p>Logged as 	<b><%=escape_javascript(params[:login])%></b></p></div>");
+$("a[href='<%=login_path%>']").before("<a data-remote='true' href='/logout' >Log out</a>");
+$("a[href='<%=login_path%>']").remove();
 $("div[class='box box_gray']:last").remove();
 $('.content_duality').prepend("<% if flash[:notice] %><div class='flash'><%= escape_javascript(flash[:notice]) %></div><%end%>");
 <%flash[:notice]=nil%>

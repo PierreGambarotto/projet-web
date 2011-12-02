@@ -4,9 +4,13 @@
 			<h2 class="cartouche">Account</h2>
 			<div class="middle clear_fix">
 					<% if current_user %>
-						<p><%= link_to "Log out", logout_path, :remote => true %></p>
+						<div class="account">
+							<p>Logged as 	<b><%=current_user.login%></b></p>
+							<p>Mail : <b><%=current_user.email%></b></p>
+						</div>
+						<%= link_to "Log out", logout_path, :remote => true %>
 					<% else %>
-						<p><%= link_to "Log in", login_path, :remote => true %></p>
+						<%= link_to "Log in", login_path, :remote => true %>
 					<%end%>
 			</div>
 			<h2 class="cartouche">Navigation</h2>

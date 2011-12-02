@@ -1,4 +1,6 @@
-$("a[href='<%=logout_path%>']").html("<a data-remote='true' href='/login' >Log in</a>");
+$("a[href='<%=logout_path%>']").before("<a data-remote='true' href='/login' >Log in</a>");
+$("a[href='<%=logout_path%>']").remove();
+$(".account").remove();
 <%flash[:notice]=nil%>
 $('.is_admin').each(function() {
     var $div = $(this);
