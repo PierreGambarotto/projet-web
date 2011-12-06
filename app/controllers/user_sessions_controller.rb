@@ -13,7 +13,7 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(:login => params[:login], :password => params[:password])
 		if @user_session.save
-			flash[:notice] = "Login sucessful!"
+			flash[:notice] = "Login successful!"
 			respond_to do |format|
 				format.js
 				format.html {redirect_to '/'}
@@ -30,7 +30,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     current_user_session.destroy
-		flash[:notice] = "Logout sucessful!"
+		flash[:notice] = "Logout successful!"
 		respond_to do |format|
 			format.js
 			format.html {redirect_to :back}

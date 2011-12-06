@@ -3,6 +3,13 @@ require 'spec_helper'
 describe 'post_edit' do
   before(:each) do
     @post = Post.create(:title => "subject1", :body => "bla bla1")
+		User.create(:login => "test", :email => "test@mail.com", :password => "test123", :password_confirmation => "test123")
+		visit posts_path
+		click_link("Log in")
+		fill_in("Login", :with => "test")
+		fill_in("Password", :with => "test123")
+		click_button("Login")
+
   end
     
 	it "affiche un lien pour editer un post" do

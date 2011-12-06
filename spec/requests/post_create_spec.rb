@@ -2,6 +2,17 @@ require 'spec_helper'
 
 describe 'post_create' do
 
+
+	before(:each) do
+		User.create(:login => "test", :email => "test@mail.com", :password => "test123", :password_confirmation => "test123")
+		visit posts_path
+		click_link("Log in")
+		fill_in("Login", :with => "test")
+		fill_in("Password", :with => "test123")
+		click_button("Login")
+	end
+
+
 	it "affiche un lien pour creer un nouveau post" do
 		visit posts_path
 		page.should have_link('New Post' , :href => new_post_path) # <a href="/posts/new">New Post</a>
@@ -24,5 +35,4 @@ describe 'post_create' do
 		current_path.should == posts_path
 		page.should have_content('titre1')
 	end
-
 end
