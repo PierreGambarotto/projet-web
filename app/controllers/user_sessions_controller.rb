@@ -11,7 +11,7 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-    @user_session = UserSession.new(:login => params[:login], :password => params[:password])
+		@user_session = UserSession.new(:login => params[:login], :password => params[:password])
 		if @user_session.save
 			flash[:notice] = "Login successful!"
 			respond_to do |format|
@@ -29,7 +29,11 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
+		puts "SESSION : "+session.inspect
+		puts "PARAMS : " +params.inspect
+		puts "USER SESSION : " + @user_session.inspect
     current_user_session.destroy
+		puts "USER SESSION : " + @user_session.inspect
 		flash[:notice] = "Logout successful!"
 		respond_to do |format|
 			format.js

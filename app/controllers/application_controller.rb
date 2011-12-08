@@ -16,7 +16,6 @@ class ApplicationController < ActionController::Base
 end
 
     def require_user
-      logger.debug "ApplicationController::require_user"
       unless current_user
         flash[:notice] = "You must be logged in to access this page"
         redirect_to posts_path
@@ -25,7 +24,6 @@ end
     end
 
     def require_no_user
-      logger.debug "ApplicationController::require_no_user"
       if current_user
         flash[:notice] = "You must be logged out to access this page"
         redirect_to account_url
