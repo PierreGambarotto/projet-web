@@ -20,7 +20,8 @@ describe 'Delete comment' do
 		click_link "Delete"
 		page.should_not have_content(:Testeur)
 		page.should_not have_content(:TestComment)
-		current_path.should == post_path(@post)	
+		current_path.should == post_path(@post)
+		click_link ('Log out')
 	end
 
 end

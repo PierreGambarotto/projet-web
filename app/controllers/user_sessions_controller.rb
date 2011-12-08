@@ -29,11 +29,7 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
-		puts "SESSION : "+session.inspect
-		puts "PARAMS : " +params.inspect
-		puts "USER SESSION : " + @user_session.inspect
     current_user_session.destroy
-		puts "USER SESSION : " + @user_session.inspect
 		flash[:notice] = "Logout successful!"
 		respond_to do |format|
 			format.js

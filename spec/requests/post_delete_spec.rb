@@ -19,6 +19,7 @@ describe 'delete /post/:id' do
 		click_link "Delete"
 		current_path.should == posts_path
 		page.should_not have_content(@post.body)
+		click_link ('Log out')
 	end
 
 end

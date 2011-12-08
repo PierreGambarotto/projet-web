@@ -15,6 +15,7 @@ describe 'post_edit' do
 	it "affiche un lien pour editer un post" do
 		visit posts_path
 		page.should have_link('Edit' , :href => edit_post_path(@post))
+		click_link ('Log out')
 	end
 
 	it "renvoi la page d edition de post qui contient un formulaire" do
@@ -23,6 +24,7 @@ describe 'post_edit' do
 		page.should have_selector('form')
 		page.should have_field('post_title')
 		page.should have_field('post_body')
+		click_link ('Log out')
 	end
 
 	it "Remplissage du formulaire" do
@@ -33,6 +35,7 @@ describe 'post_edit' do
 		current_path.should == post_path(@post)
 		page.should have_content('titre1!!!')
 		page.should have_content('contenu1!!!')
+		click_link ('Log out')
 	end
 
 end

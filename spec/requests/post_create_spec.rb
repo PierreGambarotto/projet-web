@@ -16,6 +16,7 @@ describe 'post_create' do
 	it "affiche un lien pour creer un nouveau post" do
 		visit posts_path
 		page.should have_link('New Post' , :href => new_post_path) # <a href="/posts/new">New Post</a>
+		click_link ('Log out')
 	end
 
 	it "renvoi la page de creation de post qui contient un formulaire" do
@@ -25,6 +26,7 @@ describe 'post_create' do
 		page.should have_selector('form')
 		page.should have_field('post_title')
 		page.should have_field('post_body')
+		click_link ('Log out')
 	end
 	
 	it "Remplissage du formulaire" do
@@ -34,5 +36,6 @@ describe 'post_create' do
 		click_button('Create Post')
 		current_path.should == posts_path
 		page.should have_content('titre1')
+		click_link ('Log out')
 	end
 end
