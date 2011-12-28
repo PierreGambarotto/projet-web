@@ -12,21 +12,19 @@ describe UserSessionsController do
 	describe "POST /user_sessions" do
 		
 		it "cree une session" do
+			assigns(:user_session).should be_nil
 			post :create, {:login => "test", :password => "test123"}
 			assigns(:user_session).login.should eq @user.login
 		end
 
 	end
 
-pending 'test de la destruction de session'
+pending "Test delete user_session"
 #	describe "DELETE /user_sessions/:id" do
 
 #		it "detruit une session" do
-#			UserSession.should_receive(:destroy)
-##			@user_session = stub_model(UserSession, :login => 'test', :password => 'test123')
-##			@user_session.stub(:find) {@user_session}
 #			post :create, {:login => "test", :password => "test123"}
-##			UserSession.create(:login => "test", :password => "test123")
+#			assigns(:user_session).login.should eq @user.login
 #			delete :destroy
 #			assigns(:user_session).should be_nil
 #		end
