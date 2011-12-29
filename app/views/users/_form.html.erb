@@ -1,0 +1,18 @@
+<div class='box box_gray'>
+	<div class='top'></div>
+	<div class='box_gray_inner'>
+		<h2 class='cartouche'>Login</h2>
+		<div class='middle clear_fix'>
+			<%= form_tag '/users' %>
+			<div class='login_field'>
+				<p><%= label_tag :login %><%= text_field_tag :login %></p>
+				<p><%= label_tag :email %><%= text_field_tag :email %></p>
+				<p><%= label_tag :password %><%= password_field_tag :password %></p>
+				<p><%= label_tag :password_confirmation %><%= password_field_tag :password_confirmation %></p>
+				<div class='button'>
+					<%= submit_tag value = 'Login' %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -13,6 +13,7 @@ post '/posts/:post_id/comments' => 'comments#create'
 delete '/posts/:post_id/comments/:id' => 'comments#destroy'
 get '/posts/:id/comments/new' => 'comments#new', :as => :new_comment
 resources :user_sessions
+resources :users
 
 match 'login' => "user_sessions#new",      :as => :login
 match 'logout' => "user_sessions#destroy", :as => :logout
