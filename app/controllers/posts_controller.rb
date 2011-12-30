@@ -15,7 +15,6 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		puts "parametres passes a la methode create : " + params[:post].inspect
 		@post = Post.create(params[:post])
 		redirect_to posts_path
 	end
