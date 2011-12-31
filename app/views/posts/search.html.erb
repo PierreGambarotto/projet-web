@@ -1,0 +1,19 @@
+<div class='form_container'>
+	<div class='box box_gray'>
+		<div class='top'></div>
+		<div class='box_gray_inner'>
+			<h2 class='cartouche'>Search a post</h2>
+			<div class='middle clear_fix'>
+				<%= form_tag find_posts_path %>
+				<div class="search_field">
+					<p><%= label_tag :Title %><%= text_field_tag :search_title %></p>
+
+					<p><%= label_tag :Body %><%= text_field_tag :search_body %></p>
+					<div class='button'>
+				<%= submit_tag value = 'Search' %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

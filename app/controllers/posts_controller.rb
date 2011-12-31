@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_filter :require_user, :except => [:index, :show]
+	before_filter :require_user, :except => [:index, :show, :search, :find]
 
 	def index
 		@posts = Post.all
@@ -44,4 +44,31 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+	def search
+		render
+	end
+
+	def find
+		titre = params[:search_title]
+		corps = params[:search_body]
+		
+		if titre.empty? 
+			if corps.empty?
+				@posts = Post.all
+			else 
+				#recherche seulement dans le corps des posts
+				@posts = Post.find(:all, :conditions => ['body LIKE ?', '%' + corps + '%' ] )
+				puts "ICI : " + @posts.find.inspect
+			end
+		else	#recherche dans le titre
+				if corps.empty?
+					#recherche seulement dans le titre
+					@posts = Post.find(:all,:conditions => ['title LIKE ?', '%' + titre + '%' ] )
+				else 
+					#recherche dans le titre et le corps
+					@posts = Post.find(:all, :conditions => ['title LIKE ?', '%' + titre + '%' ], :conditions => ['body LIKE ?', '%' + corps + '%' ] )
+				end
+		end
+		render 'index'
+	end
 end

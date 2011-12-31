@@ -2,6 +2,8 @@ Blog::Application.routes.draw do
 
 root :to => 'posts#index'
 
+post '/posts/search' => 'posts#find', :as => :find_posts 
+get '/posts/search' => 'posts#search', :as => :search_posts
 get '/posts' => 'posts#index', :as => :posts
 post '/posts' => 'posts#create'
 get '/posts/new' => 'posts#new', :as => :new_post

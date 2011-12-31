@@ -84,7 +84,17 @@ describe PostsController do
 
 	end
 
-	
+	describe "post search" do
+		before(:each) do
+			@posts = [stub_model(Post, :title => "Titre 1", :body => "Corps 1"),
+								stub_model(Post, :title => "Titre 2", :body => "Corps 2")]
+		end
+		it "trouve le post avec le sujet Titre 1" do
+			@found =  [stub_model(Post, :title => "Titre 1", :body => "Corps 1")]
+			post :create, :search_title => "Titre 1"
+			assigns(:posts).should == @found
+		end
+	end
 
 	
 end

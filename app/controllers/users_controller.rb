@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def create
+		puts "PARAMS : " + params.inspect
 		@user = User.new(:login => params[:login], :email => params[:email], :password => params[:password], :password_confirmation => params[:password_confirmation])
 		if @user.save
 			flash[:notice] = 'User created sucessfully'
